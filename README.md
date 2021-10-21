@@ -27,9 +27,10 @@ In this project a simple website is build using REACT JS.
 
 This website fetches movies and shows for the user and display it like INFINITE SCROLL.
 
+Backend to handle User login and signup using ExpressJS and NodeJS.
+
 This website is just a simple REACT JS website i.e. for any new developer who wants to create a basic website with not much features. 
 
-As days goes i will add more features like genre specific items, backend for user verification, horizontal scrolling or row like card structure, etc.
 
 
 ## API
