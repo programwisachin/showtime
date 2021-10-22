@@ -68,11 +68,8 @@ router.post("/user",
 router.post("/login",
     [
         //!Validation of credentials provided by the user
-        body("name", "Enter a valid name").isLength({ min: 3 }),
         body("email", "Enter a valid email").isEmail(),
-        body("password", "Password must be of atleast 5 characters").isLength({
-            min: 5,
-        }),
+        body("password", "Password must be of atleast 5 characters").exists()
     ],
     async (req, res) => {
         let success = false
@@ -80,14 +77,14 @@ router.post("/login",
         if (!errors.isEmpty()) {
             res.status(400).json({ errors: errors.array() })
         }
-        const { email, password } = req.password
+        const { email, password } = req.body
 
         try {
             let user = await User.findOne({ email })
-            if (user) {
+            if (!user) {
                 res.status(400).json({
                     success,
-                    error: "Sorry a user with this email already exists !"
+                    error: "Please enter correct credentials"
                 })
             }
 
