@@ -25,6 +25,7 @@ const ShowMovie = (props) => {
 
     useEffect(() => {
         fetchMovies() // After component is mounted function is invoked
+        // eslint-disable-next-line
     }, [])
 
 

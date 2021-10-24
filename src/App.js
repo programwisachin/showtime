@@ -8,6 +8,8 @@ import {
 
 } from "react-router-dom";
 import ShowTV from './Components/ShowTV';
+import Login from './Components/Login';
+import Signup from './Components/Signup';
 
 function App() {
 
@@ -22,6 +24,12 @@ function App() {
           </Route>
           <Route exact path="/tvshow">
             <ShowTV apiKey = {apiKey} />
+          </Route>
+          <Route exact path="/login">
+            <Login />
+          </Route>
+          <Route exact path="/signup">
+            <Signup />
           </Route>
         </Switch>
       </Router>

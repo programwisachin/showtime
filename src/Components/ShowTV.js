@@ -25,6 +25,7 @@ const ShowTV = (props) => {
 
     useEffect(() => {
         fetchShows()  // After component is mounted function is invoked
+        // eslint-disable-next-line
     }, [])
 
 
