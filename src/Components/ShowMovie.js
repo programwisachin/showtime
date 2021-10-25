@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import InfiniteScroll from 'react-infinite-scroll-component';
 import ShowItems from './ShowItems'
 import Spinner from './Spinner';
+import { useHistory } from 'react-router-dom'
 
 const ShowMovie = (props) => {
 
@@ -10,6 +11,7 @@ const ShowMovie = (props) => {
     const [totalResult, setTotalResult] = useState(0)
     const [page, setPage] = useState(1)
     const [loading, setLoading] = useState(true)
+    let history = useHistory()
 
     // Function to fetch movie
     const fetchMovies = async () => {
@@ -24,7 +26,13 @@ const ShowMovie = (props) => {
     }
 
     useEffect(() => {
-        fetchMovies() // After component is mounted function is invoked
+        //if access token is stored in local storage then only show display homepage 
+        if(localStorage.getItem('token')){
+            fetchMovies() // After component is mounted function is invoked
+        }
+        else{
+            history.push("/login")
+        }
         // eslint-disable-next-line
     }, [])
 

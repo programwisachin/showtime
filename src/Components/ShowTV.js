@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import InfiniteScroll from 'react-infinite-scroll-component';
 import ShowItems from './ShowItems'
 import Spinner from './Spinner';
+import { useHistory } from 'react-router-dom'
 
 const ShowTV = (props) => {
 
@@ -10,7 +11,7 @@ const ShowTV = (props) => {
     const [totalResult, setTotalResult] = useState(0)
     const [page, setPage] = useState(1)
     const [loading, setLoading] = useState(true)
-
+    let history = useHistory()
     const fetchShows = async () => {
 
         const url = `https://api.themoviedb.org/3/tv/popular?api_key=${props.apiKey}&language=en-US&page=1`
@@ -24,8 +25,13 @@ const ShowTV = (props) => {
     console.log(articles)
 
     useEffect(() => {
-        fetchShows()  // After component is mounted function is invoked
-        // eslint-disable-next-line
+        //if access token is stored in local storage then only show display homepage 
+        if(localStorage.getItem('token')){
+            fetchShows() // After component is mounted function is invoked
+        }
+        else{
+            history.push("/login")
+        }        // eslint-disable-next-line
     }, [])
 
 

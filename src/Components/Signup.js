@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import { useHistory } from 'react-router-dom'
 
-const Login = () => {
+const Signup = () => {
 
     const [credentials, setCredentials] = useState({name:"",email:"",password:""})  //saving credentials
     let history = useHistory()
@@ -57,4 +57,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default Signup
