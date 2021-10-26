@@ -58,7 +58,7 @@ const ShowTV = (props) => {
                     hasMore={articles.length !== totalResult}
                     loader={<Spinner />}
                 >
-                    <div className="container">
+                    <div className="container resp">  {/*class resp is for responsiveness*/}
                         <div className="row">  {/*Displaying movie card*/}
                             {articles.map((element) => {
                                 return <div className="col-md-4" key={element.id} >
