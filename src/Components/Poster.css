@@ -1,0 +1,38 @@
+.posterBlock{
+    margin-left: 10px;
+    color: white;
+}
+
+
+.posterDiv{
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    padding: 20px;
+}
+
+.posterDiv::-webkit-scrollbar{
+    display: none;
+}
+.poster{
+    max-height: 150px;
+    width: 100%;
+    object-fit: contain;
+    margin-right: 10px;
+    border-radius: 9px;
+    transition: transform 459ms;
+}
+
+.poster:hover{
+
+    transform: scale(1.07) ;
+}
+
+.posterBig{
+    max-height: 288px;
+}
+
+.poster:hover{
+
+    transform: scale(1.09) ;
+}

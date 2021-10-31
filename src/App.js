@@ -1,39 +1,36 @@
 import './App.css';
 import Navbar from './Components/Navbar';
-import ShowMovie from './Components/ShowMovie';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
 
 } from "react-router-dom";
-import ShowTV from './Components/ShowTV';
-import Login from './Components/Login';
-import Signup from './Components/Signup';
+import requests from './requests'
+import Poster from './Components/Poster';
+import Banner from './Components/Banner';
 
 function App() {
 
-  const apiKey = process.env.REACT_APP_MOVIES_API
   return (
-    <>
+    <div className="app">
       <Router>
-    <Navbar/>
-      <Switch>
-          <Route exact path="/">
-            <ShowMovie apiKey = {apiKey} />
-          </Route>
-          <Route exact path="/tvshow">
-            <ShowTV apiKey = {apiKey} />
-          </Route>
-          <Route exact path="/login">
-            <Login />
-          </Route>
-          <Route exact path="/signup">
-            <Signup />
+        <Navbar />
+        <Switch>
+          <Route exact path="/">  {/*banner and posters*/}
+            <Banner fetchUrl={requests.fetchNetfixOriginal} />
+            <Poster title="Trending" fetchUrl={requests.fetchTrending} poster />
+            <Poster title="Top Rated" fetchUrl={requests.fetchTopRated} />
+            <Poster title="Netfix Originals" fetchUrl={requests.fetchNetfixOriginal} />
+            <Poster title="Action Movies" fetchUrl={requests.fetchActionMovie} />
+            <Poster title="Comedy Movies" fetchUrl={requests.fetchComedyMovie} />
+            <Poster title="Horror Movies" fetchUrl={requests.fetchHorrorMovie} />
+            <Poster title="Romance Movies" fetchUrl={requests.fetchRomanceMovie} />
+            <Poster title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
           </Route>
         </Switch>
       </Router>
-    </>
+    </div>
   );
 }
 

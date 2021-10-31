@@ -1,12 +1,9 @@
 *{
   margin:0;
 }
-/* media queries to add responsiveness to the website */
-@media (max-width:1000px) {
-  .resp{
-    
-    display: flex;
-    justify-content: center;
-  } 
+
+.app{
+  
+  background-color: #111;
 }
 
