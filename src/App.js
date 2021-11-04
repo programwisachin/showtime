@@ -21,7 +21,7 @@ function App() {
             <Banner fetchUrl={requests.fetchNetfixOriginal} />
             <Poster title="Trending" fetchUrl={requests.fetchTrending} poster />
             <Poster title="Top Rated" fetchUrl={requests.fetchTopRated} />
-            <Poster title="Netfix Originals" fetchUrl={requests.fetchNetfixOriginal} />
+            <Poster title="Netfix Originals" fetchUrl={requests.fetchNetfixOriginal} poster/>
             <Poster title="Action Movies" fetchUrl={requests.fetchActionMovie} />
             <Poster title="Comedy Movies" fetchUrl={requests.fetchComedyMovie} />
             <Poster title="Horror Movies" fetchUrl={requests.fetchHorrorMovie} />
