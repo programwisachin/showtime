@@ -18,7 +18,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path="/">  {/*banner and posters*/}
-            <Banner fetchUrl={requests.fetchNetfixOriginal} />
+            <Banner fetchUrl={requests.fetchTrending} />
             <Poster title="Trending" fetchUrl={requests.fetchTrending} poster />
             <Poster title="Top Rated" fetchUrl={requests.fetchTopRated} />
             <Poster title="Netfix Originals" fetchUrl={requests.fetchNetfixOriginal} poster/>
