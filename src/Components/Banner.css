@@ -1,11 +1,35 @@
 .banner{
     background-color: #040d1b;
     color: white;
-    height: 579px;
+    height: 62vh;
+    width: 96vw;
+    padding: 23px;
+    display: flex;
+    justify-content: space-between;
+    animation: slider 750ms ease-in;
+}
+
+
+.leftArrow{
+    position: absolute;
+    top: 36%;
+    left: 7px;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.rightArrow{
+    position: absolute;
+    top: 36%;
+    right: 7px;
+    cursor: pointer;
+    z-index: 5;
 }
 .bannerImg{
     
     object-fit: contain;
+    border-top-right-radius: 26px;
+    border-bottom-right-radius: 26px;
 }
 .bannerHead{
     font-size: 38px;
@@ -13,9 +37,9 @@
     padding-bottom: 0.3rem;
 }
 .bannerContent{
-    margin-left: 30px;
-    padding-top: 140px;
-    height: 190px;
+    margin-left: 3rem;
+    padding-top: 9rem;
+    padding-left: 20px;
     
 }
 
@@ -50,12 +74,22 @@
     background-color: #fff;
 }
 .bannerFade{
-    height: 36.18rem;
+    height: 34.18rem;
     z-index: 1;
     background-image: linear-gradient(to right,rgba(4, 13, 27, 1),rgba(4, 13, 27, 0));
     width: 6rem;
 }
-/*  */
-/*  */
-/* #040d1b */
+
+@keyframes slider{
+    0%{
+        transform: translateX(-100%),scale(0.5);
+        opacity: 0;
+        
+    }
+    100%{
+        transform: translateX(0%),scale(1);
+        opacity: 1;
+    }
+}
+
 
